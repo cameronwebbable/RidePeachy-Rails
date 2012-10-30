@@ -5,9 +5,11 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
-
+#this will change....don't worry. My Postgres instance is borked ATM
+group :development, :test do
+  gem 'sqlite3'
+end
+group :production do
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -22,6 +24,8 @@ end
 group :development do
   gem 'rspec-rails'
   gem 'autotest-rails'
+  gem 'autotest-growl'
+  gem 'autotest-fsevent'
 end 
 
 gem 'jquery-rails'
